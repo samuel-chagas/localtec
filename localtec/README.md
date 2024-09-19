@@ -4,7 +4,7 @@
 A **Localtec** é uma plataforma de locação voltada para pessoas e empresas que precisam utilizar os equipamentos disponibilizados pela LOCALTEC. Este projeto é parte de um trabalho acadêmico da Universidade de Fortaleza (Unifor).
 
 ## Tema
-O objetivo da plataforma é permitir que usuários e organizações possam alugar equipamentos de maneira fácil e eficiente. O sistema oferece funcionalidades como agendamento de equipamentos, gerenciamento de perfis e suporte via chatbot.
+O objetivo da plataforma é permitir que usuários e organizações possam alugar equipamentos de maneira fácil e eficiente. O sistema oferece funcionalidades como agendamento de equipamentos, gerenciamento de perfis e suporte via chatbot
 
 ## Equipe
 O desenvolvimento deste projeto foi realizado por uma equipe de alunos da Unifor:
