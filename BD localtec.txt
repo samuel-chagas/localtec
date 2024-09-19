@@ -1,0 +1,51 @@
+use localtec;
+-- 1. Tabela: Empresa
+CREATE TABLE Empresa (
+    id_Organizacao INT PRIMARY KEY AUTO_INCREMENT,
+    cnpj_Organizacao VARCHAR(14) UNIQUE NOT NULL,
+    nome_Organizacao VARCHAR(100) NOT NULL,
+    endereco VARCHAR(50)
+);
+
+-- 2. Tabela: Usuario
+CREATE TABLE Usuario (
+    id_Usuario INT PRIMARY KEY AUTO_INCREMENT,
+    cpf_Usuario VARCHAR(11) UNIQUE,
+    cnpj_Usuario VARCHAR(14) UNIQUE,
+    nome_Usuario VARCHAR(100) NOT NULL,
+    email_Usuario VARCHAR(255) UNIQUE NOT NULL,
+    id_Organizacao INT,
+    FOREIGN KEY (id_Organizacao) REFERENCES Empresa(id_Organizacao) ON DELETE SET NULL
+);
+
+-- 3. Tabela: Equipamento
+CREATE TABLE Equipamento (
+    id_Aparelho INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    marca VARCHAR(50),
+    categoria VARCHAR(50)
+);
+
+-- 5. Tabela: Agendamento
+CREATE TABLE Agendamento (
+    id_Agendamento INT PRIMARY KEY AUTO_INCREMENT,
+    id_Aparelho INT,
+    id_Usuario INT,
+    data_hora TIMESTAMP NOT NULL,
+    duracao_horas FLOAT NOT NULL,
+    UNIQUE (id_Aparelho, data_hora),
+    FOREIGN KEY (id_Aparelho) REFERENCES Equipamento(id_Aparelho) ON DELETE CASCADE,
+    FOREIGN KEY (id_Usuario) REFERENCES Usuario(id_Usuario) ON DELETE CASCADE
+);
+
+-- 6. Tabela: Avaliacao
+CREATE TABLE Avaliacao (
+    id_Avaliacao INT PRIMARY KEY AUTO_INCREMENT,
+    id_Aparelho INT,
+    id_Usuario INT,
+    nota INT CHECK (nota >= 1 AND nota <= 5),
+    comentario TEXT,
+    data TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_Aparelho) REFERENCES Equipamento(id_Aparelho) ON DELETE CASCADE,
+    FOREIGN KEY (id_Usuario) REFERENCES Usuario(id_Usuario) ON DELETE CASCADE
+);
