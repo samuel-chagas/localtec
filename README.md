@@ -14,8 +14,7 @@ O desenvolvimento deste projeto foi realizado por uma equipe de alunos da Unifor
 - [Carlos Soares](https://github.com/CarlossoaresnDev)
 - [Alice Dauphin](https://github.com/AliceJDauphin)
 - [Juan (oedos)](https://github.com/oedos)
-- Matheus Matos
-
+- [Matheus Matos](https://github.com/Matt19013)
 ## Tecnologias Utilizadas
 
 ### Front-end
