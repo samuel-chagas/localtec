@@ -1,0 +1,135 @@
+.navbar {
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #4d4d4d;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .nav-links li {
+    text-transform: uppercase;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #828383;
+    font-weight: bold;
+  }
+  
+  .nav-links a:hover {
+    color: #5a5e5f;
+  }
+  
+  .search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .search-box input[type="text"] {
+    margin-top: 5px;
+    height: 30px;
+    padding: 0 20px;
+    font-size: 15px;
+    border: 2px solid #ccc;
+    min-width: 200px;
+    border-radius: 3px;
+  }
+  
+  .search-box button {
+    height: 30px;
+    width: 30px;
+    border-radius: 6px;
+    background-color: #4d4d4d;
+    border: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .search-box button svg {
+    font-size: 1.5rem;
+  }
+  
+  .cart {
+    position: relative; /* Para posicionar o dropdown */
+    list-style: none;
+    font-size: 200%;
+    margin-top: 5px;
+  }
+  
+  .cart-icon {
+    cursor: pointer;
+  }
+  
+  .cart-dropdown {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    width: 300px;
+    font-size: small;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 100;
+  }
+  
+  .cart-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .item-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .item-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .item-description {
+    color: #828383;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .item-price {
+    font-weight: bold;
+    color: #4d4d4d;
+  }
+  
+  .view-cart-button {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    padding: 10px;
+    background-color: #4d4d4d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .view-cart-button:hover {
+    background-color: #5a5e5f;
+  }
+  
