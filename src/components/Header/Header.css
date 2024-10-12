@@ -1,0 +1,129 @@
+ 
+    
+
+#section-header {
+    width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.header {
+    width: 90rem;
+    display: flex;
+    justify-content: space-between;
+    columns: 5;
+    margin-top: 2rem;
+
+}
+
+
+
+#pesquisa {
+    height: 3rem;
+    width: 30rem;
+    padding-left: 1rem;
+    margin-top: 0;
+    /* background-image: url(/FrontEnd/src/assets/Header/logo.svg); */
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    background-color: #e4eaf1;
+    border-radius: 8px;
+    border: none;
+    color: var(--dark-gray-3);
+    
+
+}
+
+.cadastro {
+    margin-top: 13px;
+}
+
+#cadastro {
+    color: #FFB703;
+    font-family: Inter;
+    font-size: 1rem;
+    letter-spacing: 0.75px;
+    font-weight: 400;
+    
+}
+
+.button1 {
+    width: 7rem;
+    height: 2.5rem;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--primary);
+    transition: 0.5;
+    margin-top: 3px;
+    font-family: Inter;
+    font-weight: 700;
+    letter-spacing: 0.75px;
+    text-align: center;
+    color: var(--light-gray-3);
+    
+
+}
+
+.button1:hover {
+    background-color: var(--tertiary);
+    transition: 0.5;
+    cursor: pointer;
+}
+
+#carrinho {
+    margin-top: 0.7rem;
+}
+
+.section-nav {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    
+
+}
+#menu {
+    width: 90rem;
+    display: flex;
+    justify-content: start;
+    list-style-type: none;
+    gap: 2rem;
+    padding: 0;
+    
+}
+
+.menu {
+    margin: 0;
+    color: var(--white);
+    font-family: Inter;
+    font-weight: 400; 
+    font-size: 1rem;
+    letter-spacing: 0.75px; 
+    text-align: center;
+    cursor: pointer ;
+
+}
+
+li {
+    color: #FFB703;
+    font-family: Inter;
+    font-weight: 400; 
+    font-size: 1rem;
+    letter-spacing: 0.75px; 
+    text-align: center;
+    cursor: pointer ;
+}
+li:hover {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+#home ,
+#produtos, 
+#categorias, 
+#meus-pedidos {
+    text-decoration: none;
+
+} 
