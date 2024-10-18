@@ -1,0 +1,165 @@
+/* body {
+    background-color: var(--light-gray-3);
+} */
+
+.section-destaque {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    font-family: Inter;
+    background-color: var(--light-gray-3);
+    
+}
+
+.divDestaque {
+    width: 90rem;
+    height:21.938rem;
+}
+
+.paragrafoColecao {
+    color: var(--dark-gray-2);
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2.375rem;
+    letter-spacing: 0.047rem;
+    display: flex;
+}
+
+.divDestaque1 {
+    display: flex;
+    justify-content: space-between;
+    height: 15.688rem;
+
+}
+
+.divDestaquePromo1 {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #D8E3F2;
+    width: 33%;
+    border-radius: 0.5rem;
+}
+
+.textoDestaque {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 2rem;
+}
+
+.paragrafoDestaque {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--dark-gray-2);
+    background-color: #E7FF86;
+    width: 6rem;
+    height: 2rem;
+    text-align: center;
+    border-radius: 1.813rem;
+    padding: 0.313rem, 0.938rem, 0.313rem, 0.938rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.h3Destaque {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.063rem;
+    line-height: 2.25rem;
+}
+
+.botaoComprar {
+    width: 9.563rem;
+    height: 3rem;
+    color: var(--primary);
+    background-color: var(--light-gray-3) ;
+    border-radius: 0.5rem;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    letter-spacing: 0.047rem;
+    margin-top: 1rem;
+}
+
+.botaoComprar:hover {
+    background-color: var(--secondary);
+    transition: 0.5;
+    cursor: pointer;
+    color: #F7F7FC;
+    ;
+}
+
+.divDestaque2 {
+    padding-top: 3rem;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Inter;
+    background-color: var(--light-gray-3);
+    
+}
+
+.colecaoP {
+    color: var(--dark-gray-2);
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2.375rem;
+    letter-spacing: 0.047rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.destaqueColecoes {
+    width: 90rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    
+}
+
+.destaqueColecoes1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.divImagem {
+    background-color: white;
+    padding: 1.25rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.divImagem:hover {
+    transform: scale(1.2);
+}
+
+.itensDestaque {
+    display: flex;
+    justify-content: center;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    text-align: center;
+    letter-spacing: 0.047rem;
+    margin: 1rem;
+    color: var(--dark-gray-2);
+}
