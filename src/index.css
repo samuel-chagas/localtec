@@ -1,0 +1,19 @@
+:root {
+    /* Cores principais */
+    --primary-color: #007bff;     /* Azul *
+    --secondary-color: #ffc107;   /* Amarelo */
+  
+    /* Cores complementares */
+    --accent-color: #ff5722;      /* Laranja de destaque */
+  
+    /* Cores para fontes e botões */
+    --font-color-dark: #333333;   /* Texto escuro */
+    --font-color-light: #ffffff;  /* Texto claro */
+    --button-color: #555555;      /* Cinza para botões */
+    --button-color-hover: #333333; /* Cinza escuro para hover */
+    --muted-color: #aaaaaa;       /* Cinza claro */
+  
+    /* Cor de fundo */
+    --background-color: #f5f5f5;  /* Fundo claro */
+  }
+  
