@@ -3,7 +3,7 @@
 // import Oferta from "../Components/Oferta/Oferta";
 // import Destaque from "../Components/Destaque1/Destaque"
 import Login from "../components/login/login";
-import HeaderSimples from "../components/Headersimples/HeaderSimples";
+import HeaderSimples from "../components/header2.0/Header";
 import Footer from "../components/Footer/Footer";
 
 

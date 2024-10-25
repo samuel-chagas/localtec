@@ -1,6 +1,4 @@
- 
-    
-
+/*
 #section-header {
     width: 100vw;
     box-sizing: border-box;
@@ -25,7 +23,7 @@
     width: 30rem;
     padding-left: 1rem;
     margin-top: 0;
-    /* background-image: url(/FrontEnd/src/assets/Header/logo.svg); */
+    background-image: url(/FrontEnd/src/assets/Header/logo.svg); 
     background-repeat: no-repeat;
     background-position: calc(100% - 10px) center;
     background-color: #e4eaf1;
@@ -46,7 +44,6 @@
     font-size: 1rem;
     letter-spacing: 0.75px;
     font-weight: 400;
-    
 }
 
 .button1 {
@@ -127,3 +124,4 @@ li:hover {
     text-decoration: none;
 
 } 
+*/
