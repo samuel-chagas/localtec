@@ -7,6 +7,7 @@ import Calça from "../../assets/Destaque/pants.svg"
 // import Boné from "../../assets/Destaque/"
 import Headphone from "../../assets/Destaque/headphones_1.svg"
 import Tênis from "../../assets/Destaque/sneakers1.svg"
+
 import { Link } from "react-router-dom"
 
 export default function Destaque() {

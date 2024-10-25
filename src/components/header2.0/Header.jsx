@@ -7,7 +7,7 @@ export function Header() {
     return (
         <div id="section-header">
             <div className="header">
-                <div className="logo">
+                <div className="    logo">
                 <Link to='/'><img id="logo" src={Logo} alt="" /></Link>
                 </div>
                 <div>
@@ -21,7 +21,7 @@ export function Header() {
                 </div>
 
                 <div>
-                    <Link to='/login' className="button1"><button className="button1">Entrar</button></Link>
+                 <Link to="/login" className="button1"> Entrar</Link>
                 </div>
                 
             </div>

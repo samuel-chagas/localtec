@@ -1,0 +1,97 @@
+#section-header {
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+   
+  
+  .logo img {
+    height: 50px;
+    margin-right: 60px;
+
+  }
+  
+  #pesquisa {
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .cadastro {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cadastro a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #007bff;
+    font-size: 14px;
+  }
+  
+  .cadastro a:hover {
+    color: #0056b3;
+  }
+  
+  #cadastro,
+  #produtos,
+  #categorias,
+  #meus-pedidos {
+    padding: 5px 10px;
+  }
+  
+  .button1 {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .button1:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    #pesquisa {
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .cadastro {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .cadastro a {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .button1 {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
