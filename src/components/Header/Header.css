@@ -22,10 +22,10 @@
 
 }
 
-
-#produtos,
-#categorias,
-#meus-pedidos {
+#Home,
+#Produtos,
+#MeusPedidos,
+#Agendar {
   padding: 5px 10px;
   text-decoration: none;
     color:var(--secondary-color);

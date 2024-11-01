@@ -1,6 +1,7 @@
 import Header from "../components/Header/Header" ;
 import Slide from "../components/Slide/Slide" ;
-
+import Destaques from "../components/Destaques/Destaques" ;
+import Footer from "../components/Footer/Footer" ;
 
 
 function Home() {
@@ -9,6 +10,8 @@ function Home() {
          <div>
             <Header/>
             <Slide/>
+            <Destaques/>
+            <Footer/>
             
         </div>
         </>

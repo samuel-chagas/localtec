@@ -1,0 +1,57 @@
+
+.global {
+    padding: 20px;
+    text-align: center;
+    font-family: Poppins;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.Cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.Cards .Card1, .Cards .Card2, .Cards .Card3, .Cards .Card4 {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.Cards .Card1:hover, .Cards .Card2:hover, .Cards .Card3:hover, .Cards .Card4:hover {
+    transform: scale(1.05);
+}
+
+.Cards img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.Cards h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.Cards button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.Cards button:hover {
+    background-color: #0056b3;
+}

@@ -8,14 +8,15 @@ export function Header() {
         <div id="section-Header">
             <div className="header">
                 <div className="logo">
-                <Link to='/'><img id="logo" src={Logo} alt="" /></Link>
+                <Link to='/Home'><img id="logo" src={Logo} alt="" /></Link>
                 </div>
                 
                 <div className="menu">
                     
-                     <Link to='/produtos' id="produtos">Produtos</Link>
-                    <Link to='/categorias' id="categorias">Categorias</Link>
-                    <Link to='/MeusPedidos' id="meus-pedidos">Meus pedidos</Link>
+                     <Link to='/Home' id="Home">Home</Link>
+                    <Link to='/Produtos' id="Produtos">Produtos</Link>
+                    <Link to='/MeusPedidos' id="MeusPedidos">Meus Pedidos</Link>
+                    <Link to='/Agendar' id="Agendar">Agendar</Link>
                    
                 </div>
 
