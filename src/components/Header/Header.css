@@ -1,8 +1,8 @@
 #section-header {
   width: 100%;
-  
   padding: 10px 0;
   box-shadow: 10px 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: poppins;
 }
 
 .header {
@@ -34,10 +34,11 @@
 }
 
 .button1 {
+  font-family: poppins;
   background-color: #007bff;
-  color: white;
+  color: rgb(236, 235, 235);
   border: none;
-  padding: 8px 16px;
+  padding: 7px 15px;
   border-radius: 4px;
   text-decoration: none;
   font-size: 14px;
@@ -46,7 +47,10 @@
 
 .button1:hover {
   background-color: #0056b3;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
+  
+
 
 @media (max-width: 768px) {
   .header {

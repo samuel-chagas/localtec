@@ -19,17 +19,18 @@
     --font-color-light: #ffffff;  /* Texto claro */
     --button-color: #555555;      /* Cinza para botões */
     --button-color-hover: #333333; /* Cinza escuro para hover */
-    --muted-color: #aaaaaa;       /* Cinza claro */
+    --muted-color: #ebe5e5;       /* Cinza claro */
   
     /* Cor de fundo */
-    --background-color: #d8e2dc;  /* Fundo claro */
+    --background-color: #869ac0;  /* Fundo claro */
   }
   
   body {
     margin: auto;
     width: 100%;
-     /* display: flex;
-    justify-content: center; */
+    
+      /* display: flex; */
+     /* justify-content: center;  */
     background-color: var(--background-color);
   
   }

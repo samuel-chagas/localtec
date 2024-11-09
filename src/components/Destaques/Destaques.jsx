@@ -15,26 +15,26 @@ export function Destaques () {
 <div className= "Cards">
   
     <div className="Card1">
-      <img src={Produto1} alt= "Equipamento1" className="Equipamento1" />
-      <h2>Produto1</h2>
+      <img src={Produto1} alt= "agitador" className="Equipamento1" />
+      <h2>agitador</h2>
       <button>Alugar</button>
     </div>
 
     <div className="Card2">
-      <img src={Produto2} alt= "Equipamento2" className="Equipamento2" />
-      <h2>Produto2</h2>
+      <img src={Produto2} alt= "balanca_semianalitica" className="Equipamento2" />
+      <h2>balança</h2>
       <button>Alugar</button>
     </div>
 
     <div className="Card3">
       <img src={Produto3} alt= "Equipamento3" className="Equipamento3" />
-      <h2>Produto3</h2>
+      <h2>controlador</h2>
       <button>Alugar</button>
     </div>
 
     <div className="Card4">
       <img src={Produto4} alt= "Equipamento4" className="Equipamento4" />
-      <h2>Produto4</h2>
+      <h2>phmetro</h2>
       <button>Alugar</button>
     </div>
 

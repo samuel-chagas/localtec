@@ -18,7 +18,7 @@ import Slide3 from "../../assets/slide/slide3.png";
 import { Pagination, Navigation } from 'swiper/modules';
 
 
-export default function App() {
+export default function Slide() {
   return (
     <>
       <Swiper
@@ -40,7 +40,7 @@ export default function App() {
                   <p className="paragrafoMOferta">produtos</p>
                   <h1 id="h1QueimaEstoque">microscópio</h1>
                   <p className="paragrafoDescricaoOferta">temos os modelos ópticos, eletrônicos ou digitais, <br /> amplamente utilizados em campos como medicina, <br /> pesquisa científica e indústrias.</p>
-                  <Link to="/detalhesDoProduto"><button className="botaoVendoOfertas">Ver Ofertas</button></Link>
+                  <Link to="/Podutos"><button className="botaoVendoOfertas">Ver Ofertas</button></Link>
               </div>
 
               <div className="divCarrosselImagens">
@@ -60,7 +60,7 @@ export default function App() {
                     <p className="paragrafoMOferta">produtos</p>
                     <h1 id="h1QueimaEstoque">microscópio</h1>
                     <p className="paragrafoDescricaoOferta">temos os modelos ópticos, eletrônicos ou digitais, <br /> amplamente utilizados em campos como medicina, <br /> pesquisa científica e indústrias.</p>
-                    <Link to="/detalhesDoProduto"><button className="botaoVendoOfertas">Ver Ofertas</button></Link>
+                    <Link to="/Podutos"><button className="botaoVendoOfertas">Ver Ofertas</button></Link>
                 </div>
 
                 <div className="divCarrosselImagens">
@@ -80,7 +80,7 @@ export default function App() {
                 <p className="paragrafoMOferta">produtos</p>
                 <h1 id="h1QueimaEstoque">microscópio</h1>
                 <p className="paragrafoDescricaoOferta">temos os modelos ópticos, eletrônicos ou digitais, <br /> amplamente utilizados em campos como medicina, <br /> pesquisa científica e indústrias.</p>
-                <Link to="/detalhesDoProduto"><button className="botaoVendoOfertas">Ver Ofertas</button></Link>
+                <Link to="/Podutos"><button className="botaoVendoOfertas">Ver Ofertas</button></Link>
             </div>
 
             <div className="divCarrosselImagens">
@@ -101,7 +101,7 @@ export default function App() {
                       <p className="paragrafoMOferta">produtos</p>
                       <h1 id="h1QueimaEstoque">microscópio</h1>
                       <p className="paragrafoDescricaoOferta">temos os modelos ópticos, eletrônicos ou digitais, <br /> amplamente utilizados em campos como medicina, <br /> pesquisa científica e indústrias.</p>
-                      <Link to="/detalhesDoProduto"><button className="botaoVendoOfertas">Ver Ofertas</button></Link>
+                      <Link to="/Podutos"><button className="botaoVendoOfertas">Ver Ofertas</button></Link>
                   </div>
 
                   <div className="divCarrosselImagens">

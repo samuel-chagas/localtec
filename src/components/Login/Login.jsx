@@ -1,55 +1,59 @@
-import "./Login.css";
 import { useState } from "react";
 import { FaUser, FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import './Login.css';
 
 const Login = () => {
-    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
     const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        // Simulação de uma chamada de API para autenticação
-        const response = await fakeAuthApi(username, password);
+        try {
+            const response = await fetch("http://localhost:5001/api/users/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email, password }),
+            });
 
-        if (response.success) {
-            navigate("/dashboard");
-        } else {
-            setError("Credenciais inválidas. Tente novamente.");
+            const data = await response.json();
+
+            if (response.ok) {
+                setSuccess("Login efetuado com sucesso!");
+                setTimeout(() => {
+                    navigate("/Home");
+                }, 2000); // Aguarda 2 segundos antes de navegar para a página Home
+            } else {
+                setError(data.message || "Credenciais inválidas. Tente novamente.");
+            }
+        } catch {
+            setError("Ocorreu um erro. Tente novamente mais tarde.");
         }
     };
 
-    const fakeAuthApi = (username, password) => {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                if (username === "user" && password === "password") {
-                    resolve({ success: true });
-                } else {
-                    resolve({ success: false });
-                }
-            }, 1000);
-        });
-    };
-
     return (
-        <div className="container">
+        <div className="login-container">
             <form onSubmit={handleSubmit}>
-                <h1>Acesse o sistema</h1>
-                {error && <p className="error">{error}</p>}
-                <div className="input-field">
+                <h1>Login</h1>
+                {error && <p className="login-error">{error}</p>}
+                {success && <p className="success">{success}</p>}
+                <div className="login-input-field">
                     <input
-                        type="text"
-                        placeholder="E-mail"
+                        type="email"
+                        placeholder="Email"
                         required
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                     <FaUser className="icon" />
                 </div>
-                <div className="input-field">
+                <div className="login-input-field">
                     <input
                         type="password"
                         placeholder="Senha"
@@ -59,20 +63,9 @@ const Login = () => {
                     />
                     <FaLock className="icon" />
                 </div>
-
-                <div className="recall-forget">
-                    <label>
-                        <input type="checkbox" />
-                        Lembre de mim
-                    </label>
-                    <a href="#">Esqueceu sua senha?</a>
-                </div>
-                <button type="submit">Login</button>
-                <div className="signup-link">
-                    <p>
-                        Não tem uma conta? <a href="/cadastro">Registar</a>{" "}
-                        
-                    </p>
+                <button className="login-button" type="submit">Entrar</button>
+                <div className="login-ok">
+                    <a href="/Cadastrar">Não tem uma conta? Cadastre-se</a>
                 </div>
             </form>
         </div>

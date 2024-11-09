@@ -1,5 +1,5 @@
 import './Footer.css'
-import Logo from "../../../public/logo.png"
+import Logo from "../../assets/logo/logo.png"
 import IconFace from "../../assets/Footer/icon-face.svg"
 import IconInsta from "../../assets/Footer/icon-insta.svg"
 import IconTwitter from "../../assets/Footer/icon-twitter.svg"
@@ -25,10 +25,10 @@ export default function Footer() {
 
             <div className="divFinalFooter">
               <div className="divInfos">
-                <h3 className="h3Footer">Informação</h3>
+                <h3 className="h3Footer">Páginas</h3>
                 <Link to="/produtos" className="paragrafo1Footer">produtos</Link>
                 <Link to="/meuspedidos" className="paragrafo1Footer">meus pedidos</Link>
-                <Link to="/Cadastro" className="paragrafo1Footer">cadastrar</Link>
+                <Link to="/Cadastrar" className="paragrafo1Footer">cadastrar</Link>
               </div>
              
               <div className="divContato">
