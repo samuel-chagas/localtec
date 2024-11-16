@@ -1,18 +1,15 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Atualize para useNavigate
+import { useNavigate } from 'react-router-dom';
 import './Produtos.css';
 
 const Produtos = () => {
   const [produtos, setProdutos] = useState([]);
-  const navigate = useNavigate(); // Atualize para useNavigate
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProdutos = async () => {
       try {
         const response = await fetch('http://localhost:5001/api/produtos');
-        if (!response.ok) {
-          throw new Error('Erro ao buscar produtos');
-        }
         const data = await response.json();
         setProdutos(data);
       } catch (error) {
@@ -23,16 +20,18 @@ const Produtos = () => {
     fetchProdutos();
   }, []);
 
-  const handleRedirect = (id) => {
-    navigate(`/produto/${id}`); // Atualize para useNavigate
+  const handleAgendar = (id) => {
+    navigate(`/Agendar/${id}`);
   };
 
   return (
     <div className="produtos">
       {produtos.map((produto) => (
-        <div key={produto.id} className="card" onClick={() => handleRedirect(produto.id)}>
+        <div key={produto.id} className="card">
+          <img src={produto.imageUrl} alt={produto.name} />
           <h2>{produto.name}</h2>
-          <p>Preço: R${produto.price}</p>
+         
+          <button onClick={() => handleAgendar(produto.id)}>Agendar</button>
         </div>
       ))}
     </div>

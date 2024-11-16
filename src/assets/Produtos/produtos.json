@@ -1,0 +1,87 @@
+[
+  {
+    "id": 21,
+    "name": "agitador de helice am20",
+    "price": 100,
+    "imageUrl": "/src/assets/Equipamentos/agitador_de_helice_am20_g.jpg"
+  },
+  {
+    "id": 22,
+    "name": "analisador de carbono organico total toc2500",
+    "price": 100,
+    "imageUrl": "/src/assets/Equipamentos/analisador_de_carbono_organico_total_toc2500_g.jpg"
+  },
+  {
+    "id": 23,
+    "name": "balanca analitica ag200",
+    "price": 100,
+    "imageUrl": "/src/assets/Equipamentos/balanca_analitica_ag200_g.jpg"
+  },
+  {
+    "id": 24,
+    "name": "balanca semianalitica bk3000",
+    "price": 100,
+    "imageUrl": "/src/assets/Equipamentos/balanca_semianalitica_bk3000_g.jpg"
+  },
+  {
+    "id": 25,
+    "name": "balanca semianalitica bk8000",
+    "price": 100,
+    "imageUrl": "/src/assets/Equipamentos/balanca_semianalitica_bk8000_g.jpg"
+  },
+  {
+    "id": 26,
+    "name": "condutivimetro de bancada cg2000",
+    "price": 100,
+    "imageUrl": "/src/assets/Equipamentos/condutivimetro_de_bancada_cg2000_g.jpg"
+  },
+  {
+    "id": 27,
+    "name": "conjunto balanca controladora farma sp5000",
+    "price": 100,
+    "imageUrl": "/src/assets/Equipamentos/conjunto_balanca_controladora_farma_sp5000_g.jpg"
+  },
+  {
+    "id": 28,
+    "name": "controlador estatisticos de processos sp5000",
+    "price": 100,
+    "imageUrl": "/src/assets/Equipamentos/controlador_estatisticos_de_processos_sp5000_g.jpg"
+  },
+  {
+    "id": 29,
+    "name": "impressora termica ig210",
+    "price": 100,
+    "imageUrl": "/src/assets/Equipamentos/impressora_termica_ig210_g.jpg"
+  },
+  {
+    "id": 30,
+    "name": "kit solucao padrao de condutividade",
+    "price": 100,
+    "imageUrl": "/src/assets/Equipamentos/kit solucao_padrao_de_condutividade_g.jpg"
+  },
+  {
+    "id": 31,
+    "name": "kit solucao tampao padrao din",
+    "price": 100,
+    "imageUrl": "/src/assets/Equipamentos/kit solucao_tampao_padrao_din_g.jpg"
+  },
+  {
+    "id": 32,
+    "name": "medidor de ponto de fusao pf 1500 farma",
+    "price": 100,
+    "imageUrl": "/src/assets/Equipamentos/medidor_de_ponto_de_fusao_pf_1500_farma_g.jpg"
+  },
+  {
+    "id": 33,
+    "name": "pg3000",
+    "price": 100,
+    "imageUrl": "/src/assets/Equipamentos/pg3000_g.jpg"
+  },
+  {
+    "id": 34,
+    "name": "phmetro portatil pg1400",
+    "price": 100,
+    "imageUrl": "/src/assets/Equipamentos/phmetro_portatil_pg1400_g.jpg"
+  }
+ 
+]

@@ -14,7 +14,7 @@ export function Header() {
                     <Link to='/Home' id="Home">Home</Link>
                     <Link to='/Produtos' id="Produtos">Produtos</Link>
                     <Link to='/MeusPedidos' id="MeusPedidos">Meus Pedidos</Link>
-                    <Link to='/Agendar' id="Agendar">Agendar</Link>
+                    {/* <Link to='/Agendar' id="Agendar">Agendar</Link> */}
                 </div>
                 <div>
                     <Link to='/Login' className="button1">Login</Link>

@@ -11,7 +11,7 @@ import Ornament from "../../assets/photo-cientista/Ornament.png";
 import Slide1 from "../../assets/slide/slide1.png";
 import Slide2 from "../../assets/slide/slide2.png";
 import Slide3 from "../../assets/slide/slide3.png";
-
+import Slide4 from "../../assets/slide/slide4.png";
 
 
 // import required modules
@@ -108,7 +108,7 @@ export default function Slide() {
                       <div className="divImagensOferta">
                           <img id="imagemOrnament" src={Ornament} alt="" />
                       </div>
-                      <img id="equipamentos em destaque" src={Slide1} alt="" />
+                      <img id="equipamentos em destaque" src={Slide4} alt="" />
                   </div>
                   </div>
 
