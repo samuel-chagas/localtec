@@ -1,0 +1,55 @@
+.ofertasTexto {
+    width: 90rem;
+    display: flex;
+    justify-content: start;
+    position: absolute;
+    padding-top: 8rem;
+    flex-direction: column;
+    
+}
+
+.paragrafoMOferta {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    letter-spacing: 0.047rem;
+    color: var(--warning);
+}
+
+#h1QueimaEstoque {
+    color: var(--dark-grey);
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 4.125rem;
+    letter-spacing: 0.063rem;
+}
+
+.paragrafoDescricaoOferta {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 2.125rem;
+    letter-spacing: 0.75px;
+    color: var(--dark-grey-2);
+    padding-top: 1rem;
+    padding-top: 8;
+}
+
+.botaoVendoOfertas {
+    width: 13.75rem;
+    height: 3rem;
+    background-color: var(--primary);
+    color: var(--light-gray-3);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.047rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    line-height: 1.5rem;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.botaoVendoOfertas:hover {
+    background-color: var(--tertiary);
+    transition: 0.5rem;
+}
