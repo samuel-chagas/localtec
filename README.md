@@ -9,7 +9,7 @@ O objetivo da plataforma é permitir que usuários e organizações possam aluga
 ## Equipe
 O desenvolvimento deste projeto foi realizado por uma equipe de alunos da Unifor:
 
-- [Natásha Milhomem](https://github.com/natashamilhomem)
+- [Natasha Milhomem](https://github.com/natashamilhomem)
 - [Samuel Chagas](https://github.com/samuel-chagas)
 - [Carlos Soares](https://github.com/CarlossoaresnDev)
 - [Alice Dauphin](https://github.com/AliceJDauphin)
