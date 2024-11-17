@@ -1,0 +1,93 @@
+.login-container {
+    width: 450px;
+    
+    font-family: Poppins, sans-serif;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 40px;
+     margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-icon {
+    position: absolute;
+    left: 15px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+}
+    
+
+
+.login-ok {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.login-ok a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 600;
+}
+
+.login-container h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.login-input-field {
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.login-input-field .icon {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: black;
+  }
+
+.login-input-field input {
+    width: 70%;
+    height: 45px;
+    background: rgba(248, 246, 246, 0.4);
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    font-size: 16px;
+    color: #000000;
+    padding: 10px 15px;
+}
+
+.login-button {
+    width: 70%;
+    height: 45px;
+    display: block;
+    margin: 30px auto;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #0e0000;
+    font-weight: 700;
+}
+
+.login-error {
+    color: red;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+}

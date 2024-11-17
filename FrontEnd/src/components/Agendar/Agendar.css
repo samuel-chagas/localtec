@@ -1,0 +1,80 @@
+.agendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.produto-info {
+  text-align: center;
+}
+
+.descricao {
+  font-size: 14px;
+  color: #555;
+}
+
+.disponibilidade {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.agendar-formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.agendar-formulario label {
+  margin-top: 10px;
+}
+
+.agendar-formulario input,
+.agendar-formulario select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.agendar-button {
+  background-color: #ff6f61;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.agendar-button:hover {
+  background-color: #ff4d3d;
+}
+
+.produtos-relacionados {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.produtos-lista {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.produto-relacionado {
+  width: 100px;
+  text-align: center;
+}
+
+.produto-relacionado img {
+  width: 100%;
+  border-radius: 8px;
+}
