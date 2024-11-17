@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Notebook",
+      "Descricao": "Um belo notebook.",
+      "categoria": "Eletronicos",
+      "preco": 100,
+      "image": "https://www.gehaka.com.br/galerias/68/controlador_estatisticos_de_processos_sp5000_2_ls.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Mouse",
+      "Descricao": "Um belo Mouse.",
+      "categoria": "Perifericos",
+      "preco": 10,
+      "image": "https://www.gehaka.com.br/galerias/69/controlador_estatisticos_de_processos_sp3000_ls.jpg"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "João Silva",
+      "email": "joao.silva@example.com"
+    },
+    {
+      "id": 2,
+      "nome": "Maria Oliveira",
+      "email": "maria.oliveira@example.com"
+    }
+  ],
+  "usuariosProdutos": [
+    {
+      "usuarioId": 1,
+      "produtoId": 1,
+      "dataEmprestimo": "2024-11-01",
+      "dataEntrega": "2024-11-10"
+    },
+    {
+      "usuarioId": 1,
+      "produtoId": 2,
+      "dataEmprestimo": "2024-11-05",
+      "dataEntrega": "2024-11-15"
+    },
+    {
+      "usuarioId": 2,
+      "produtoId": 2,
+      "dataEmprestimo": "2024-11-07",
+      "dataEntrega": "2024-11-17"
+    }
+  ]
+}
