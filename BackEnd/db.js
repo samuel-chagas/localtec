@@ -1,9 +1,12 @@
+require('dotenv').config(); // Importa e configura dotenv
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('localtec', 'root', '12345678', {
-  host: '127.0.0.1',
-  dialect: 'mysql',
-  logging: console.log, // Adicione esta linha para habilitar logs do Sequelize
+// Use as variáveis de ambiente
+const sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, process.env.DB_PASSWORD, 
+  {
+  host: process.env.DB_HOST,
+  dialect: process.env.DB_DIALECT,
+  logging: console.log, // Habilita logs do Sequelize
 });
 
 module.exports = sequelize;

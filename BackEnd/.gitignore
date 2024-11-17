@@ -24,3 +24,6 @@ Thumbs.db
 # Banco de dados
 *.sqlite
 *.sqlite3
+
+#Env
+.env
