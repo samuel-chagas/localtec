@@ -8,7 +8,10 @@ const agendamentoRoutes = require('./routes/agendamentoRoutes');
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173', // Substitua pelo seu domínio frontend
+  credentials: true
+}));
 app.use(express.json());
 
 // Configuração da sessão

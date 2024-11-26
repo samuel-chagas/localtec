@@ -13,7 +13,7 @@ export function Header() {
                 <div className="menu">
                     <Link to='/Home' id="Home">Home</Link>
                     <Link to='/Produtos' id="Produtos">Produtos</Link>
-                    <Link to='/MeusPedidos' id="MeusPedidos">Meus Pedidos</Link>
+                    <Link to='/MeusAgendamentos' id="MeusPedidos">Agendamentos</Link>
                     {/* <Link to='/Agendar' id="Agendar">Agendar</Link> */}
                 </div>
                 <div>
