@@ -1,0 +1,61 @@
+.pedidos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.pedidos-container h2 {
+  margin-bottom: 20px;
+}
+
+.pedidos-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.pedidos-container li {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #fff;
+}
+
+.pedido-card {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #fff;
+}
+
+.pedido-card h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.pedido-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.pedido-card .status {
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.pedido-card .status.pendente {
+  color: #ff9800;
+}
+
+.pedido-card .status.cancelado {
+  color: #f44336;
+}

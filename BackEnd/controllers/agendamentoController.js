@@ -21,3 +21,13 @@ exports.createAgendamento = async (req, res) => {
     res.status(500).send('Erro ao criar agendamento');
   }
 };
+
+exports.getAgendamentosByUser = async (req, res) => {
+  try {
+    const agendamentos = await Agendamento.findAll({ where: { userId: req.params.userId } });
+    res.json(agendamentos);
+  } catch (error) {
+    console.error('Erro ao buscar agendamentos:', error.message, error.stack);
+    res.status(500).send('Erro ao buscar agendamentos');
+  }
+};

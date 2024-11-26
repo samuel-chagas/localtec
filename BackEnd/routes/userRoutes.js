@@ -52,23 +52,29 @@ router.post('/login', async (req, res) => {
       return res.status(400).send({ message: 'Senha incorreta' });
     }
 
-    const token = jwt.sign({ id: user.id }, 'seuSegredo', { expiresIn: '1h' });
-    res.json({ token });
+    // Salvar o usuário na sessão
+    req.session.user = { id: user.id, nome: user.nome };
+    res.json({ message: 'Login bem-sucedido' });
   } catch (error) {
     console.error('Erro ao fazer login:', error);
     res.status(500).send({ message: 'Erro ao fazer login' });
   }
 });
 
-router.get('/me', async (req, res) => {
-  const token = req.headers.authorization.split(' ')[1];
-  try {
-    const decoded = jwt.verify(token, 'seuSegredo');
-    const user = await User.findByPk(decoded.id, { attributes: ['nome'] });
-    res.json({ username: user.nome });
-  } catch (error) {
-    console.error('Erro ao buscar usuário:', error);
-    res.status(500).send({ message: 'Erro ao buscar usuário' });
+router.post('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      return res.status(500).send({ message: 'Erro ao fazer logout' });
+    }
+    res.send({ message: 'Logout bem-sucedido' });
+  });
+});
+
+router.get('/me', (req, res) => {
+  if (req.session.user) {
+    res.json(req.session.user);
+  } else {
+    res.status(401).send({ message: 'Não autenticado' });
   }
 });
 

@@ -16,7 +16,7 @@ db.connect((err) => {
 });
 
 // Caminho para a pasta de equipamentos
-const equipamentosDir = path.join( '../../localtec/src/assets/Equipamentos');
+const equipamentosDir = path.join(__dirname, '..', '..', 'FrontEnd', 'src', 'assets', 'Equipamentos');
 
 // Função para extrair o nome do produto a partir do nome do arquivo
 const getProductName = (filename) => {
@@ -26,18 +26,25 @@ const getProductName = (filename) => {
 
 // Função para inserir produtos no banco de dados
 const insertProducts = () => {
-  fs.readdir(equipamentosDir, (err, files) => {
-    if (err) throw err;
+  fs.access(equipamentosDir, fs.constants.F_OK, (err) => {
+    if (err) {
+      console.error(`Diretório não encontrado: ${equipamentosDir}`);
+      return;
+    }
 
-    files.forEach((file) => {
-      const productName = getProductName(file);
-      const imageUrl = `/src/assets/Equipamentos/${file}`;
-      const price = 100;
+    fs.readdir(equipamentosDir, (err, files) => {
+      if (err) throw err;
 
-      const query = 'INSERT INTO products (name, price, imageUrl) VALUES (?, ?, ?)';
-      db.query(query, [productName, price, imageUrl], (err, result) => {
-        if (err) throw err;
-        console.log(`Produto ${productName} inserido com sucesso`);
+      files.forEach((file) => {
+        const productName = getProductName(file);
+        const imageUrl = `/src/assets/Equipamentos/${file}`;
+        const price = 100;
+
+        const query = 'INSERT INTO products (name, price, imageUrl) VALUES (?, ?, ?)';
+        db.query(query, [productName, price, imageUrl], (err, result) => {
+          if (err) throw err;
+          console.log(`Produto ${productName} inserido com sucesso`);
+        });
       });
     });
   });

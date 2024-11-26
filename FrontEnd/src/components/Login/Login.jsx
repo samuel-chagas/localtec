@@ -10,8 +10,8 @@ const Login = () => {
     const [success, setSuccess] = useState("");
     const navigate = useNavigate();
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
         try {
             const response = await fetch("http://localhost:5001/api/users/login", {
@@ -20,16 +20,16 @@ const Login = () => {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({ email, password }),
+                credentials: 'include'
             });
 
-            const data = await response.json();
-
             if (response.ok) {
-                setSuccess("Login efetuado com sucesso!");
-                setTimeout(() => {
-                    navigate("/Home");
-                }, 2000); // Aguarda 2 segundos antes de navegar para a página Home
+                const data = await response.json();
+                setUser(data);
+                localStorage.setItem("login", data);
+                navigate("/MeusAgendamentos");
             } else {
+                const data = await response.json(); // Defina 'data' aqui
                 setError(data.message || "Credenciais inválidas. Tente novamente.");
             }
         } catch {
