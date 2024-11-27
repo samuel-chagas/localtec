@@ -1,38 +1,20 @@
-import Header from "../components/Header/Header";
+import PropTypes from "prop-types";
 import Login from "../components/Login/Login";
 import Footer from "../components/Footer/Footer";
 
-function LoginPage (){
+function LoginPage({ setUser }) {
     return (
-
-<>
-<div>
-    <Header/>
-    <Login/>
-    <Footer/>
-</div>
-
-</>
-
-    )
+        <>
+            <div>
+                <Login setUser={setUser} />
+                <Footer />
+            </div>
+        </>
+    );
 }
+
+LoginPage.propTypes = {
+    setUser: PropTypes.func.isRequired,
+};
+
 export default LoginPage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -48,6 +48,7 @@ const Agendar = () => {
     }
 
     try {
+      console.log('Enviando dados para agendamento:', { produtoId: id, data, hora });
       const response = await fetch('http://localhost:5001/api/agendamentos', {
         method: 'POST',
         headers: {
@@ -58,8 +59,10 @@ const Agendar = () => {
 
       if (response.ok) {
         alert('Agendamento realizado com sucesso!');
-        setAgendamentos([...agendamentos, { data, hora }]);
+        setAgendamentos([...agendamentos, { produtoId: id, data, hora }]);
       } else {
+        const errorData = await response.json();
+        console.error('Erro ao realizar agendamento:', errorData);
         alert('Erro ao realizar agendamento.');
       }
     } catch (error) {

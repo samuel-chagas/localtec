@@ -30,7 +30,6 @@ const Produtos = () => {
         <div key={produto.id} className="card">
           <img src={produto.imageUrl} alt={produto.name} />
           <h2>{produto.name}</h2>
-         
           <button onClick={() => handleAgendar(produto.id)}>Agendar</button>
         </div>
       ))}

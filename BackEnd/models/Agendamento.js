@@ -2,11 +2,6 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../db');
 
 const Agendamento = sequelize.define('Agendamento', {
-  id: {
-    type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true,
-  },
   produtoId: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -16,12 +11,9 @@ const Agendamento = sequelize.define('Agendamento', {
     allowNull: false,
   },
   hora: {
-    type: DataTypes.STRING,
+    type: DataTypes.TIME,
     allowNull: false,
   },
-}, {
-  tableName: 'agendamentos',
-  timestamps: false,
 });
 
 module.exports = Agendamento;

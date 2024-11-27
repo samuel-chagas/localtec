@@ -1,20 +1,22 @@
-import Header from "../components/Header/Header" ;
-import Slide from "../components/Slide/Slide" ;
-import Destaques from "../components/Destaques/Destaques" ;
-import Footer from "../components/Footer/Footer" ;
+import PropTypes from 'prop-types';
+import Slide from "../components/Slide/Slide";
+import Destaques from "../components/Destaques/Destaques";
+import Footer from "../components/Footer/Footer";
 
-
-function Home() {
+function Home({ user }) {
     return (
         <>
-         <div>
-            <Header/>
-            <Slide/>
-            <Destaques/>
-            <Footer/>
-            
-        </div>
+            <div>
+                <Slide />
+                <Destaques />
+                <Footer />
+            </div>
         </>
-       
-    )
-} export default Home;
+    );
+}
+
+Home.propTypes = {
+    user: PropTypes.object
+};
+
+export default Home;

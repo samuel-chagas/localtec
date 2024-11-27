@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import "./Pedidos.css";
+import LoginPrompt from '../LoginPrompt/LoginPrompt';
 
 const Pedidos = ({ user }) => {
   const [agendamentos, setAgendamentos] = useState([]);
@@ -23,7 +24,7 @@ const Pedidos = ({ user }) => {
   }, [user]);
 
   if (!user) {
-    return <div>Você precisa estar logado para ver seus agendamentos.</div>;
+    return <LoginPrompt />;
   }
 
   return (

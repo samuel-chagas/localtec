@@ -1,13 +1,13 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import { FaUser, FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import './Login.css';
 
-const Login = () => {
+const Login = ({ setUser }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-    const [success, setSuccess] = useState("");
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -26,10 +26,10 @@ const Login = () => {
             if (response.ok) {
                 const data = await response.json();
                 setUser(data);
-                localStorage.setItem("login", data);
-                navigate("/MeusAgendamentos");
+                localStorage.setItem("login", JSON.stringify(data));
+                navigate("/");
             } else {
-                const data = await response.json(); // Defina 'data' aqui
+                const data = await response.json();
                 setError(data.message || "Credenciais inválidas. Tente novamente.");
             }
         } catch {
@@ -42,7 +42,6 @@ const Login = () => {
             <form onSubmit={handleSubmit}>
                 <h1>Login</h1>
                 {error && <p className="login-error">{error}</p>}
-                {success && <p className="success">{success}</p>}
                 <div className="login-input-field">
                     <input
                         type="email"
@@ -70,6 +69,10 @@ const Login = () => {
             </form>
         </div>
     );
+};
+
+Login.propTypes = {
+    setUser: PropTypes.func.isRequired,
 };
 
 export default Login;
