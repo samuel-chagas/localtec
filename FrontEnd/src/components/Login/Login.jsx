@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { FaUser, FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 import './Login.css';
 
-const Login = () => {
+const Login = ({ setUser }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -25,15 +26,19 @@ const Login = () => {
 
             if (response.ok) {
                 const data = await response.json();
+                setSuccess("Login bem-sucedido!");
+                setError(""); // Limpa a mensagem de erro
                 setUser(data);
-                localStorage.setItem("login", data);
-                navigate("/MeusAgendamentos");
+                localStorage.setItem("user", JSON.stringify(data));
+                navigate("/Home"); // Redireciona para a página inicial
             } else {
-                const data = await response.json(); // Defina 'data' aqui
+                const data = await response.json();
                 setError(data.message || "Credenciais inválidas. Tente novamente.");
+                setSuccess(""); // Limpa a mensagem de sucesso
             }
         } catch {
             setError("Ocorreu um erro. Tente novamente mais tarde.");
+            setSuccess(""); // Limpa a mensagem de sucesso
         }
     };
 
@@ -70,6 +75,10 @@ const Login = () => {
             </form>
         </div>
     );
+};
+
+Login.propTypes = {
+    setUser: PropTypes.func.isRequired,
 };
 
 export default Login;

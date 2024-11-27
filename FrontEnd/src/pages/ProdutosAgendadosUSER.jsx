@@ -6,7 +6,7 @@ const ProdutosAgendadosUSER = ({ user }) => {
   return (
     <>
       <div>
-        <Header />
+        <Header user={user} />
         <Pedidos user={user} />
         <Footer />
       </div>

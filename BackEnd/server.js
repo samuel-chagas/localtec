@@ -9,17 +9,21 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 
 app.use(cors({
-  origin: 'http://localhost:5173', // Substitua pelo seu domínio frontend
+  origin: 'http://localhost:5173',
   credentials: true
 }));
 app.use(express.json());
 
 // Configuração da sessão
 app.use(session({
-  secret: 'seuSegredo',
+  secret: 'unifor2024', 
   resave: false,
-  saveUninitialized: true,
-  cookie: { secure: false } // Defina como true se estiver usando HTTPS
+  saveUninitialized: false,
+  cookie: {
+    httpOnly: true, // Evita acesso via JavaScript no navegador
+    secure: process.env.NODE_ENV === 'production', // HTTPS apenas em produção
+    maxAge: 1000 * 60 * 60 * 24, // 1 dia
+  },
 }));
 
 app.use('/api/users', userRoutes);
