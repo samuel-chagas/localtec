@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import "./Pedidos.css";
 import LoginPrompt from '../LoginPrompt/LoginPrompt';
+import ProdutosAgendadosUSER from '../../pages/ProdutosAgendadosUSER';
 
 const Pedidos = ({ user }) => {
   const [agendamentos, setAgendamentos] = useState([]);
@@ -8,9 +10,7 @@ const Pedidos = ({ user }) => {
   useEffect(() => {
     const fetchAgendamentos = async () => {
       try {
-        const response = await fetch(`http://localhost:5001/api/agendamentos/user/${user.id}`, {
-          credentials: 'include'
-        });
+        const response = await fetch('/api/agendamentos');
         const data = await response.json();
         setAgendamentos(data);
       } catch (error) {
@@ -28,17 +28,15 @@ const Pedidos = ({ user }) => {
   }
 
   return (
-    <div className="pedidos-container">
-      <h2>Meus Agendamentos</h2>
-      <ul>
-        {agendamentos.map((agendamento) => (
-          <li key={agendamento.id}>
-            Produto ID: {agendamento.produtoId}, Data: {agendamento.data}, Hora: {agendamento.hora}
-          </li>
-        ))}
-      </ul>
+    <div>
+      {/* Renderização dos agendamentos */}
+      <ProdutosAgendadosUSER agendamentos={agendamentos} />
     </div>
   );
+};
+
+Pedidos.propTypes = {
+  user: PropTypes.object
 };
 
 export default Pedidos;

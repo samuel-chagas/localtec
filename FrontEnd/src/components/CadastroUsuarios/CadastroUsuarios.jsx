@@ -9,6 +9,12 @@ const CadastroUsuarios = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!nome || !email || !password || !empresa) {
+      alert('Todos os campos são obrigatórios');
+      return;
+    }
+
     try {
       const response = await fetch('http://localhost:5001/api/users/register', {
         method: 'POST',
@@ -17,13 +23,16 @@ const CadastroUsuarios = () => {
         },
         body: JSON.stringify({ nome, email, password, empresa })
       });
+
       if (response.ok) {
         alert('Usuário registrado com sucesso');
       } else {
-        alert('Erro ao registrar usuário');
+        const errorData = await response.json();
+        alert(errorData.message || 'Erro ao registrar usuário');
       }
     } catch (error) {
-      console.error('Erro ao registrar usuário:', error);
+      console.error(error);
+      alert('Erro ao registrar usuário');
     }
   };
 

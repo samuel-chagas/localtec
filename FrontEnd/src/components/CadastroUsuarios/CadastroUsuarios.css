@@ -72,6 +72,14 @@
   background-color: #0056b3;
 }
 
+.error-message {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
 .success-message {
   text-align: center;
   color: green;
