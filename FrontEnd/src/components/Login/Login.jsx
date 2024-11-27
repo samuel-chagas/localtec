@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import { FaUser, FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -8,7 +9,6 @@ const Login = ({ setUser }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-    const [success, setSuccess] = useState("");
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -29,8 +29,13 @@ const Login = ({ setUser }) => {
                 setSuccess("Login bem-sucedido!");
                 setError(""); // Limpa a mensagem de erro
                 setUser(data);
+<<<<<<< HEAD
                 localStorage.setItem("user", JSON.stringify(data));
                 navigate("/Home"); // Redireciona para a página inicial
+=======
+                localStorage.setItem("login", JSON.stringify(data));
+                navigate("/");
+>>>>>>> 9590658e6abb814592da6e227a5ebe3a2637a748
             } else {
                 const data = await response.json();
                 setError(data.message || "Credenciais inválidas. Tente novamente.");
@@ -47,7 +52,6 @@ const Login = ({ setUser }) => {
             <form onSubmit={handleSubmit}>
                 <h1>Login</h1>
                 {error && <p className="login-error">{error}</p>}
-                {success && <p className="success">{success}</p>}
                 <div className="login-input-field">
                     <input
                         type="email"
