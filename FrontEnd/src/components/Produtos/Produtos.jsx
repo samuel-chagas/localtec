@@ -11,10 +11,14 @@ const Produtos = () => {
     const fetchProdutos = async () => {
       try {
         const response = await fetch('http://localhost:5001/api/produtos');
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(`Erro ao buscar produtos: ${errorText}`);
+        }
         const data = await response.json();
         setProdutos(data);
       } catch (error) {
-        console.error('Erro ao buscar produtos:', error);
+        console.error('Erro ao buscar produtos:', error.message);
       } finally {
         setLoading(false); // Definir carregamento como falso após a busca
       }

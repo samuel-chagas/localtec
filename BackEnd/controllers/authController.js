@@ -1,6 +1,35 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+const { Sequelize, DataTypes } = require('sequelize');
+const sequelize = require('../db'); // Certifique-se de que o caminho está correto
+
+const User = sequelize.define('User', {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  nome: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+  },
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  empresa: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+}, {
+  tableName: 'users',
+  timestamps: false,
+});
 
 exports.register = async (req, res) => {
     const { name, email, password } = req.body;
@@ -18,27 +47,29 @@ exports.register = async (req, res) => {
 
         res.status(201).json({ message: 'Usuário registrado com sucesso' });
     } catch (err) {
+        console.error('Erro no registro:', err); // Adicione este log
         res.status(500).json({ message: 'Erro no servidor' });
     }
 };
 
 exports.login = async (req, res) => {
-    const { email, password } = req.body;
+  const { email, password } = req.body;
 
-    try {
-        const user = await User.findOne({ where: { email } });
-        if (!user) {
-            return res.status(400).json({ message: 'Email ou senha incorretos' });
-        }
-
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) {
-            return res.status(400).json({ message: 'Email ou senha incorretos' });
-        }
-
-        const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-        res.json({ token, user: { id: user.id, name: user.name, email: user.email } });
-    } catch (err) {
-        res.status(500).json({ message: 'Erro no servidor' });
+  try {
+    const user = await User.findOne({ where: { email } });
+    if (!user) {
+      return res.status(400).json({ message: 'Email ou senha incorretos' });
     }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(400).json({ message: 'Email ou senha incorretos' });
+    }
+
+    req.session.user = user; // Configura a sessão do usuário
+    res.json(user);
+  } catch (err) {
+    console.error('Erro no login:', err);
+    res.status(500).json({ message: 'Erro no servidor' });
+  }
 };

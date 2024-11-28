@@ -1,10 +1,12 @@
 const express = require('express');
-const { createUser, loginUser, getUsers } = require('../controllers/userController');
+const { createUser, getUsers } = require('../controllers/userController');
+const authController = require('../controllers/authController');
 
 const router = express.Router();
 
-router.post('/register', createUser);
-router.post('/login', loginUser);
+router.post('/register', authController.register);
+router.post('/login', authController.login); // Endpoint configurado para receber requisição POST
+
 router.get('/', getUsers);
 
 router.get('/session', (req, res) => {

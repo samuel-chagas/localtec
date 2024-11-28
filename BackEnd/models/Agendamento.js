@@ -16,12 +16,16 @@ const Agendamento = sequelize.define('Agendamento', {
             key: 'id'
         }
     },
+    userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
     data: {
         type: DataTypes.DATEONLY,
         allowNull: false,
     },
     hora: {
-        type: DataTypes.TIME,
+        type: DataTypes.STRING, // Alterado para STRING
         allowNull: false,
     },
 });

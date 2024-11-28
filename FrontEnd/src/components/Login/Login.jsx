@@ -37,7 +37,7 @@ const Login = ({ setUser }) => {
                 alert(errorData.message || "Erro ao fazer login");
             }
         } catch (error) {
-            alert("Erro ao fazer login");
+            alert(`Erro ao fazer login: ${error.message}`);
         }
     };
 

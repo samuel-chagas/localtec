@@ -14,7 +14,9 @@ const Agendar = () => {
     const fetchProduto = async () => {
       try {
         const response = await fetch(`http://localhost:5001/api/produtos/${id}`);
-        const data = await response.json();
+        const text = await response.text();
+        console.log('Resposta do servidor:', text);
+        const data = JSON.parse(text);
         setProduto(data);
       } catch (error) {
         console.error('Erro ao buscar produto:', error);
@@ -25,7 +27,8 @@ const Agendar = () => {
       try {
         const response = await fetch(`http://localhost:5001/api/agendamentos/${id}`);
         if (!response.ok) {
-          throw new Error('Erro ao buscar agendamentos');
+          const errorText = await response.text();
+          throw new Error(`Erro ao buscar agendamentos: ${response.status} - ${errorText}`);
         }
         const data = await response.json();
         setAgendamentos(data);
@@ -72,19 +75,18 @@ const Agendar = () => {
     }
 
     try {
-      console.log('Enviando dados para agendamento:', { produtoId: id, data, hora });
       const response = await fetch('http://localhost:5001/api/agendamentos', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         credentials: 'include',
-        body: JSON.stringify({ produtoId: id, data, hora }),
+        body: JSON.stringify({ produtoId: id, data, hora, userId: user.id }), // Inclua o userId aqui
       });
 
       if (response.ok) {
         alert('Agendamento realizado com sucesso!');
-        setAgendamentos([...agendamentos, { produtoId: id, data, hora }]);
+        setAgendamentos([...agendamentos, { produtoId: id, data, hora, userId: user.id }]);
       } else {
         const errorData = await response.json();
         console.error('Erro ao realizar agendamento:', errorData);
@@ -115,33 +117,9 @@ const Agendar = () => {
       <div className="agendar-formulario">
         <label htmlFor="data">Escolha a data de agendamento:</label>
         <input type="date" id="data" name="data" value={data} onChange={(e) => setData(e.target.value)} />
-
-        <label htmlFor="hora">Escolha o horário:</label>
-        <select id="hora" name="hora" value={hora} onChange={(e) => setHora(e.target.value)}>
-          <option value="">Selecione um horário</option>
-          <option value="08:00 - 10:00">08:00 - 10:00</option>
-          <option value="10:00 - 12:00">10:00 - 12:00</option>
-          <option value="14:00 - 16:00">14:00 - 16:00</option>
-          <option value="16:00 - 18:00">16:00 - 18:00</option>
-        </select>
-
+        <label htmlFor="hora">Escolha a hora de agendamento:</label>
+        <input type="time" id="hora" name="hora" value={hora} onChange={(e) => setHora(e.target.value)} />
         <button className="agendar-button" onClick={handleAgendar}>Agendar</button>
-      </div>
-
-      <div className="produtos-relacionados">
-        <h3>Produtos Relacionados</h3>
-        <div className="produtos-lista">
-          {/* Exemplo de produtos relacionados */}
-          <div className="produto-relacionado">
-            <img src="caminho_da_imagem_do_produto.jpg" alt="Produto Relacionado" />
-            <p>Produto 1</p>
-          </div>
-          <div className="produto-relacionado">
-            <img src="caminho_da_imagem_do_produto.jpg" alt="Produto Relacionado" />
-            <p>Produto 2</p>
-          </div>
-          {/* Outros produtos relacionados... */}
-        </div>
       </div>
     </div>
   );
