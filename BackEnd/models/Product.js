@@ -1,5 +1,8 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../db');
+const { Sequelize, DataTypes } = require('sequelize');
+const sequelize = new Sequelize('database', 'username', 'password', {
+  host: 'localhost',
+  dialect: 'mysql' // ou 'sqlite', 'postgres', 'mssql'
+});
 
 const Product = sequelize.define('Product', {
   id: {
@@ -17,7 +20,7 @@ const Product = sequelize.define('Product', {
   },
   imageUrl: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
 }, {
   tableName: 'products',

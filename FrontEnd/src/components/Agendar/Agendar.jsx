@@ -8,6 +8,7 @@ const Agendar = () => {
   const [data, setData] = useState('');
   const [hora, setHora] = useState('');
   const [agendamentos, setAgendamentos] = useState([]);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const fetchProduto = async () => {
@@ -33,11 +34,34 @@ const Agendar = () => {
       }
     };
 
+    const fetchUser = async () => {
+      try {
+        const response = await fetch('http://localhost:5001/api/users/session', {
+          credentials: 'include'
+        });
+        if (response.ok) {
+          const userData = await response.json();
+          setUser(userData);
+        } else {
+          setUser(null);
+        }
+      } catch (error) {
+        console.error('Erro ao buscar usuário:', error);
+        setUser(null);
+      }
+    };
+
     fetchProduto();
     fetchAgendamentos();
+    fetchUser();
   }, [id]);
 
   const handleAgendar = async () => {
+    if (!user) {
+      alert('Você precisa estar logado para agendar um produto.');
+      return;
+    }
+
     const agendamentoExistente = agendamentos.find(
       (agendamento) => agendamento.data === data && agendamento.hora === hora
     );
@@ -54,6 +78,7 @@ const Agendar = () => {
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'include',
         body: JSON.stringify({ produtoId: id, data, hora }),
       });
 

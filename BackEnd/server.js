@@ -1,9 +1,11 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const session = require('express-session');
-const userRoutes = require('./routes/userRoutes');
-const productRoutes = require('./routes/productRoutes');
+const sequelize = require('./db'); // Corrigir o caminho para o arquivo db.js
+const userRoutes = require('./routes/userRoutes'); // Corrigir o nome do arquivo de rotas
 const agendamentoRoutes = require('./routes/agendamentoRoutes');
+const productRoutes = require('./routes/productRoutes'); // Adicionar rotas de produtos
 
 const app = express();
 const PORT = process.env.PORT || 5001;
@@ -16,20 +18,21 @@ app.use(express.json());
 
 // Configuração da sessão
 app.use(session({
-  secret: 'unifor2024', 
+  secret: 'seuSegredoAqui',
   resave: false,
-  saveUninitialized: false,
-  cookie: {
-    httpOnly: true, // Evita acesso via JavaScript no navegador
-    secure: process.env.NODE_ENV === 'production', // HTTPS apenas em produção
-    maxAge: 1000 * 60 * 60 * 24, // 1 dia
-  },
+  saveUninitialized: true,
+  cookie: { secure: false } // Defina como true se estiver usando HTTPS
 }));
 
+// Usando as rotas
 app.use('/api/users', userRoutes);
-app.use('/api/produtos', productRoutes);
 app.use('/api/agendamentos', agendamentoRoutes);
+app.use('/api/produtos', productRoutes); // Adicionar rota de produtos
 
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+sequelize.sync().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+  });
+}).catch(err => {
+  console.error('Erro ao conectar ao banco de dados:', err);
 });

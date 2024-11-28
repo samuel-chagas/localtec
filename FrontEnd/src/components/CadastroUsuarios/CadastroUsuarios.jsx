@@ -27,8 +27,12 @@ const CadastroUsuarios = () => {
       if (response.ok) {
         alert('Usuário registrado com sucesso');
       } else {
-        const errorData = await response.json();
-        alert(errorData.message || 'Erro ao registrar usuário');
+        try {
+          const errorData = await response.json();
+          alert(errorData.message || 'Erro ao registrar usuário');
+        } catch {
+          alert('Erro ao registrar usuário');
+        }
       }
     } catch (error) {
       console.error(error);
