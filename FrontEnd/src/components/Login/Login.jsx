@@ -25,15 +25,19 @@ const Login = () => {
             const data = await response.json();
 
             if (response.ok) {
+                localStorage.setItem('token', data.token);
                 setSuccess("Login efetuado com sucesso!");
+                setError('');
                 setTimeout(() => {
                     navigate("/Home");
                 }, 2000); // Aguarda 2 segundos antes de navegar para a página Home
             } else {
                 setError(data.message || "Credenciais inválidas. Tente novamente.");
+                setSuccess('');
             }
         } catch {
             setError("Ocorreu um erro. Tente novamente mais tarde.");
+            setSuccess('');
         }
     };
 

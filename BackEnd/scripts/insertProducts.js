@@ -16,17 +16,17 @@ db.connect((err) => {
 });
 
 // Caminho para a pasta de equipamentos
-const equipamentosDir = path.join( '../../localtec/src/assets/Equipamentos');
+const directoryPath = path.join('D:', 'OneDrive', 'Documentos', 'unifor', 'PA WEB', 'sos', 'localtec', 'FrontEnd', 'src', 'assets', 'Equipamentos');
 
 // Função para extrair o nome do produto a partir do nome do arquivo
 const getProductName = (filename) => {
-  const nameParts = filename.split('_');
-  return nameParts.slice(0, nameParts.length - 1).join(' ');
+  const name = path.parse(filename).name;
+  return name.split('_')[0];
 };
 
 // Função para inserir produtos no banco de dados
 const insertProducts = () => {
-  fs.readdir(equipamentosDir, (err, files) => {
+  fs.readdir(directoryPath, (err, files) => {
     if (err) throw err;
 
     files.forEach((file) => {

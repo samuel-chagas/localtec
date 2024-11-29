@@ -10,6 +10,18 @@ const Agendamento = sequelize.define('Agendamento', {
   produtoId: {
     type: DataTypes.INTEGER,
     allowNull: false,
+    references: {
+      model: 'products',
+      key: 'id'
+    }
+  },
+  userId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: 'users',
+      key: 'id'
+    }
   },
   data: {
     type: DataTypes.DATEONLY,
