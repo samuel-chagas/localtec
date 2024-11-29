@@ -8,8 +8,8 @@ import 'swiper/css/navigation';
 import './Slide.css';
 
 import Ornament from "../../assets/photo-cientista/Ornament.png";
-import Slide1 from "../../assets/slide/slide1.png";
-import Slide2 from "../../assets/slide/slide2.png";
+import Slide1 from "../../assets/slide/Agitador_.png";
+import Slide2 from "../../assets/slide/Analisador_de_umidade_e_sólidos_totais.png";
 import Slide3 from "../../assets/slide/slide3.png";
 import Slide4 from "../../assets/slide/slide4.png";
 
@@ -38,9 +38,9 @@ export default function Slide() {
 
               <div className="ofertasTexto">
                   <p className="paragrafoMOferta">produtos</p>
-                  <h1 id="h1QueimaEstoque">microscópio</h1>
+                  <h1 id="h1QueimaEstoque">Agitador</h1>
                   <p className="paragrafoDescricaoOferta">temos os modelos ópticos, eletrônicos ou digitais, <br /> amplamente utilizados em campos como medicina, <br /> pesquisa científica e indústrias.</p>
-                  <Link to="/Podutos"><button className="botaoVendoOfertas">Ver Ofertas</button></Link>
+                  <Link to="/Produtos"><button className="botaoVendoOfertas">Ver Ofertas</button></Link>
               </div>
 
               <div className="divCarrosselImagens">
@@ -58,9 +58,9 @@ export default function Slide() {
 
                 <div className="ofertasTexto">
                     <p className="paragrafoMOferta">produtos</p>
-                    <h1 id="h1QueimaEstoque">microscópio</h1>
+                    <h1 id="h1QueimaEstoque">Analisador</h1>
                     <p className="paragrafoDescricaoOferta">temos os modelos ópticos, eletrônicos ou digitais, <br /> amplamente utilizados em campos como medicina, <br /> pesquisa científica e indústrias.</p>
-                    <Link to="/Podutos"><button className="botaoVendoOfertas">Ver Ofertas</button></Link>
+                    <Link to="/Produtos"><button className="botaoVendoOfertas">Ver Ofertas</button></Link>
                 </div>
 
                 <div className="divCarrosselImagens">
@@ -78,9 +78,9 @@ export default function Slide() {
 
             <div className="ofertasTexto">
                 <p className="paragrafoMOferta">produtos</p>
-                <h1 id="h1QueimaEstoque">microscópio</h1>
+                <h1 id="h1QueimaEstoque">Erlenmeyer</h1>
                 <p className="paragrafoDescricaoOferta">temos os modelos ópticos, eletrônicos ou digitais, <br /> amplamente utilizados em campos como medicina, <br /> pesquisa científica e indústrias.</p>
-                <Link to="/Podutos"><button className="botaoVendoOfertas">Ver Ofertas</button></Link>
+                <Link to="/Produtos"><button className="botaoVendoOfertas">Ver Ofertas</button></Link>
             </div>
 
             <div className="divCarrosselImagens">
@@ -99,9 +99,9 @@ export default function Slide() {
 
                   <div className="ofertasTexto">
                       <p className="paragrafoMOferta">produtos</p>
-                      <h1 id="h1QueimaEstoque">microscópio</h1>
+                      <h1 id="h1QueimaEstoque">kit</h1>
                       <p className="paragrafoDescricaoOferta">temos os modelos ópticos, eletrônicos ou digitais, <br /> amplamente utilizados em campos como medicina, <br /> pesquisa científica e indústrias.</p>
-                      <Link to="/Podutos"><button className="botaoVendoOfertas">Ver Ofertas</button></Link>
+                      <Link to="/Produtos"><button className="botaoVendoOfertas">Ver Ofertas</button></Link>
                   </div>
 
                   <div className="divCarrosselImagens">

@@ -124,11 +124,11 @@ const Agendar = () => {
       {/* Informações do Produto */}
       <div className="produto-info">
         <h2>{produto.name}</h2>
-        <p>ID do Produto: {produto.id}</p>
+        {/* <p>ID do Produto: {produto.id}</p> */}
         <p className="descricao">{produto.description}</p>
         <div className="disponibilidade">
-          <p>Disponibilidade:</p>
-          <span>{produto.stock > 0 ? 'Em estoque' : 'Indisponível'}</span>
+          {/* <p>Disponibilidade:</p> */}
+          {/* <span>{produto.stock > 0 ? 'Em estoque' : 'Indisponível'}</span> */}
         </div>
         <img src={produto.imageUrl} alt={produto.name} />
       </div>

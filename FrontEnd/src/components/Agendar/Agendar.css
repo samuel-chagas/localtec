@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 .agendar-container {
+  font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,6 +13,22 @@
 
 .produto-info {
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.produto-info h2 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.produto-info p {
+  margin: 5px 0;
+}
+
+.produto-info img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
 .descricao {
@@ -28,33 +47,38 @@
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .agendar-formulario label {
-  margin-top: 10px;
+  margin: 10px 0 5px;
 }
 
 .agendar-formulario input,
 .agendar-formulario select {
   width: 100%;
-  padding: 8px;
-  margin-top: 5px;
+  padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  max-width: 300px;
 }
 
 .agendar-button {
-  background-color: #ff6f61;
+  background-color: #007bff;
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
+  font-weight: 600;
 }
 
 .agendar-button:hover {
-  background-color: #ff4d3d;
+  background-color: #0056b3;
 }
 
 .produtos-relacionados {

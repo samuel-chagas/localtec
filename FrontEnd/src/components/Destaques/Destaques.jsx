@@ -1,6 +1,6 @@
 import "./Destaques.css";
-// import React from 'react';
-//  import { Link } from "react-router-dom"
+
+import { Link } from "react-router-dom";
 import Produto1 from "../../assets/Destaques/agitador_com_aqueciemnto.jpg";
 import Produto2 from "../../assets/Destaques/balanca_semianalitica.jpg";
 import Produto3 from "../../assets/Destaques/phmetro_portatil.jpg";
@@ -17,19 +17,19 @@ export function Destaques () {
     <div className="Card1">
       <img src={Produto1} alt= "agitador" className="Equipamento1" />
       <h2>agitador</h2>
-      <button>Alugar</button>
+      <Link to="/produtos"><button>Alugar</button></Link>
     </div>
 
     <div className="Card2">
       <img src={Produto2} alt= "balanca_semianalitica" className="Equipamento2" />
       <h2>balança</h2>
-      <button>Alugar</button>
+      <Link to="/produtos"><button>Alugar</button></Link>
     </div>
 
     <div className="Card3">
       <img src={Produto3} alt= "Equipamento3" className="Equipamento3" />
       <h2>controlador</h2>
-      <button>Alugar</button>
+      <Link to="/produtos"><button>Alugar</button></Link>
     </div>
 
     <div className="Card4">
@@ -47,5 +47,3 @@ export function Destaques () {
 }
 
 export default Destaques
-
-
